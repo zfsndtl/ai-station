@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>我的 H5 项目</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!--
+    ============================================================================
+    webProject H5 项目约定（详见 .workbuddy/skills/web-h5-conventions）
+    ----------------------------------------------------------------------------
+    1. 本 index.html 是所有功能的【入口图标墙】，每个功能一个图标卡片。
+    2. 开发「新的 H5 页面功能」时，流程固定为：
+         a. 在 assets/ 放一张功能图标（建议 96×96 SVG/PNG）；
+         b. 在 js/index.js 的 features 数组追加一项（icon / title / file）；
+         c. 在【本目录】创建对应的 <file>.html（与 index.html 同层）；
+         d. 页面自有 JS 放 js/、CSS 放 css/、其它静态资源放 assets/；
+            若涉及 Python 脚本，放 tools/。
+    3. 所有子页面与 index.html 同级；不要新建子目录来放页面。
+    ============================================================================
+  -->
+  <main class="app">
+    <header class="hero">
+      <h1 class="hero__title">我的 H5 项目</h1>
+      <p class="hero__subtitle">功能入口 · 点击图标进入对应页面</p>
+    </header>
+
+    <section class="panel">
+      <h2 class="panel__title">功能入口</h2>
+      <div id="feature-grid" class="grid" aria-live="polite"></div>
+    </section>
+
+    <section class="panel guide">
+      <h2 class="panel__title">新增功能指引</h2>
+      <ol class="guide__steps">
+        <li>在 <code>assets/</code> 放功能图标（如 <code>assets/foo.svg</code>）。</li>
+        <li>在 <code>js/index.js</code> 的 <code>features</code> 数组追加一项：<code>{ icon, title, file }</code>。</li>
+        <li>在<strong>当前目录</strong>创建对应的 <code>file</code> 同名 html 页面（与 index.html 同层）。</li>
+        <li>页面代码按约定分目录：JS→<code>js/</code>、CSS→<code>css/</code>、静态资源→<code>assets/</code>、Python→<code>tools/</code>。</li>
+      </ol>
+    </section>
+
+    <footer class="foot">本页为入口，所有功能从此跳转</footer>
+  </main>
+
+  <script src="js/index.js"></script>
+</body>
+</html>

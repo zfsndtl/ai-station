@@ -1,0 +1,155 @@
+/* ===========================================================================
+   webProject / styles.css
+   入口图标墙 + 通用 H5 基础样式（移动端优先，桌面居中）
+   =========================================================================== */
+
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --text: #1f2329;
+  --text-weak: #8a9099;
+  --brand: #3b6cff;
+  --brand-weak: #eaf0ff;
+  --border: #ebedf0;
+  --shadow-sm: 0 1px 2px rgba(31, 35, 41, 0.06);
+  --shadow-md: 0 4px 16px rgba(31, 35, 41, 0.10);
+  --radius: 14px;
+  --gap: 14px;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px 16px 32px;
+  min-height: 100vh;
+}
+
+/* ---------- 标题区 ---------- */
+.hero {
+  text-align: center;
+  padding: 12px 0 20px;
+}
+.hero__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.hero__subtitle {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--text-weak);
+}
+
+/* ---------- 区块面板 ---------- */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 16px;
+  margin-bottom: var(--gap);
+}
+.panel__title {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* ---------- 图标网格 ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+.card:active {
+  transform: scale(0.96);
+  box-shadow: var(--shadow-md);
+  border-color: var(--brand);
+}
+.card__icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: var(--brand-weak);
+  padding: 6px;
+}
+.card__title {
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* ---------- 空状态 ---------- */
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-weak);
+  font-size: 13px;
+  padding: 24px 8px;
+}
+
+/* ---------- 指引 ---------- */
+.guide__steps {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text);
+  font-size: 13px;
+}
+.guide__steps li { margin-bottom: 8px; }
+.guide code {
+  background: var(--brand-weak);
+  color: var(--brand);
+  padding: 1px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+/* ---------- 页脚 ---------- */
+.foot {
+  text-align: center;
+  color: var(--text-weak);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/* ---------- 响应式：平板 / 桌面列数增加 ---------- */
+@media (min-width: 520px) {
+  .grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (min-width: 768px) {
+  .grid { grid-template-columns: repeat(6, 1fr); }
+  .app { padding-top: 28px; }
+}

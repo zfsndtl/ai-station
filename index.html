@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AI 创作小站</title>
+  <link rel="stylesheet" href="css/ai-station.css">
+</head>
+<body>
+  <div class="as-app">
+    <!-- 桌面侧栏 -->
+    <aside class="as-side">
+      <div class="as-brand" id="asBrand"></div>
+      <nav class="as-nav" id="asNav"></nav>
+      <div class="as-foot">
+        <a href="index.html">← 返回工作台首页</a>
+      </div>
+    </aside>
+
+    <!-- 内容区 -->
+    <main class="as-main">
+      <header class="as-head">
+        <h2 id="asTitle">精选作品</h2>
+        <p class="slogan" id="asSlogan"></p>
+        <p class="owner" id="asOwner"></p>
+      </header>
+      <section class="as-grid" id="asGrid"></section>
+    </main>
+  </div>
+
+  <!-- 移动端底部 Tab -->
+  <nav class="as-tabbar" id="asTabbar"></nav>
+
+  <!-- 详情弹窗 -->
+  <div class="as-modal" id="asModal">
+    <div class="sheet"></div>
+  </div>
+
+  <script src="js/ai-station-data.js"></script>
+  <script src="js/ai-station.js"></script>
+</body>
+</html>
